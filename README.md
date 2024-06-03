@@ -1,4 +1,3 @@
-```markdown
 # Secure Hashing and Data Management
 
 ## Table of Contents
@@ -27,14 +26,15 @@ In a world where data breaches are rampant, safeguarding sensitive information i
 5. **On-Demand Decryption**: Effortlessly retrieve and decrypt stored data whenever you need it.
 
 ## Project Structure
+```
 .
-├── db_connection_string.py
-├── database_utils.py
-├── hashing_utils.py
 ├── main.py
 ├── operations.py
-└── statistical_analysis.py
-
+├── hashing_utils.py
+├── database_utils.py
+├── statistical_analysis.py
+└── db_connection_string.py
+```
 - `main.py`: Command Center offering a menu for various high-stakes operations.
 - `operations.py`: The Operations Suite containing high-level functions for hashing, analysis, database insertion, and decryption.
 - `hashing_utils.py`: Security Arsenal with tools for hashing data, reading CSV files, and saving processed data.
