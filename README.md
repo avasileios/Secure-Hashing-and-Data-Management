@@ -27,7 +27,6 @@ In a world where data breaches are rampant, safeguarding sensitive information i
 5. **On-Demand Decryption**: Effortlessly retrieve and decrypt stored data whenever you need it.
 
 ## Project Structure
-```
 .
 ├── db_connection_string.py
 ├── database_utils.py
@@ -35,7 +34,6 @@ In a world where data breaches are rampant, safeguarding sensitive information i
 ├── main.py
 ├── operations.py
 └── statistical_analysis.py
-```
 
 - `main.py`: Command Center offering a menu for various high-stakes operations.
 - `operations.py`: The Operations Suite containing high-level functions for hashing, analysis, database insertion, and decryption.
@@ -99,4 +97,3 @@ Contributions are welcome! Please submit a pull request or open an issue to disc
 
 ## License
 This project is licensed under the MIT License.
-```
