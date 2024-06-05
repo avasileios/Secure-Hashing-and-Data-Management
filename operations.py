@@ -60,7 +60,7 @@ def opt2():
     perform_statistical_analysis()
 
 def opt3():
-    print('Inserting to Disconections_Primary Table ')
+    print('Inserting to Disconnections_Primary Table ')
     global table_name_to_send
     if table_name_to_send:
         insert_into_disconnections_primary(table_name_to_send, connection_string)

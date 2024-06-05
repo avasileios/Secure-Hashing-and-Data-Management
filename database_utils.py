@@ -40,19 +40,19 @@ def insert_into_disconnections_primary(table_name_to_send, connection_string):
         cursor = connection.cursor()
 
         insert_query = f"""
-            INSERT INTO Disconections_Primary (Hashed_CA, CA)
+            INSERT INTO Disconnections_Primary (Hashed_CA, CA)
             SELECT DISTINCT b.Hashed_CA, b.CA
             FROM {table_name_to_send} b
-            LEFT JOIN Disconections_Primary a ON a.Hashed_CA = b.Hashed_CA
+            LEFT JOIN Disconnections_Primary a ON a.Hashed_CA = b.Hashed_CA
             WHERE a.Hashed_CA IS NULL;
         """
         print('Inserting...')
         cursor.execute(insert_query)
         connection.commit()
-        print('Data inserted into Disconections_Primary.')
+        print('Data inserted into Disconnections_Primary.')
 
     except Exception as e:
-        print(f"Error inserting data into Disconections_Primary: {e}")
+        print(f"Error inserting data into Disconnections_Primary: {e}")
     finally:
         connection.close()
 
@@ -76,7 +76,6 @@ def insert_new_csv_to_database(connection_string):
     table_name_to_send = os.path.splitext(os.path.basename(path))[0]
 
     save_to_database(df, table_name_to_send, connection_string)
-
     return table_name_to_send , directory_path
 
 def decryption(table_name, connection_string, directory_path):
@@ -87,10 +86,10 @@ def decryption(table_name, connection_string, directory_path):
         cursor = connection.cursor()
 
         query = f"""
-            SELECT DISTINCT r.Hashed_CA, a.CA
-            FROM {table_name} r
-            LEFT JOIN Disconections_Primary a ON r.Hashed_CA = a.Hashed_CA
-            ORDER BY r.Hashed_CA;
+            SELECT DISTINCT t2.Hashed_CA, t1.CA
+            FROM {table_name} t2
+            INNER JOIN Disconnections_Primary t1 ON t2.Hashed_CA = t1.Hashed_CA
+            ORDER BY t2.Hashed_CA;
         """
         cursor.execute(query)
 

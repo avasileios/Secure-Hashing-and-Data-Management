@@ -5,7 +5,7 @@ def main():
         print("\nMenu:")
         print("1. Hash")
         print("2. Statistical Analysis")
-        print("3. Insert the hashed Data to Disconections_Primary Table")
+        print("3. Insert the hashed Data to Disconnections_Primary Table")
         print("4. Decryption")
         print("5. Exit")
 
